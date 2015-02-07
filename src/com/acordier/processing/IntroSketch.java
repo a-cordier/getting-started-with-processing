@@ -3,8 +3,7 @@ package com.acordier.processing;
 import processing.core.PApplet;
 
 import com.acordier.processing.baloney.PatternFactory;
-import com.acordier.processing.util.ColorUtil;
-import com.acordier.processing.util.PointUtil;
+
 
 public class IntroSketch extends PatternFactory{
 
@@ -25,7 +24,7 @@ public class IntroSketch extends PatternFactory{
 	}
 	
 	public void draw(){
-		randomCustomShapesWithRandomColors(8);
+		pinsAndLine(80);
 	}
 	
 	

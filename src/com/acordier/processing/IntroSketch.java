@@ -1,5 +1,7 @@
 package com.acordier.processing;
 
+import java.util.Random;
+
 import processing.core.PApplet;
 
 import com.acordier.processing.baloney.PatternFactory;
@@ -8,12 +10,7 @@ import com.acordier.processing.baloney.PatternFactory;
 public class IntroSketch extends PatternFactory{
 
 	private static final long serialVersionUID = 1L;
-	
-
-
-	public static void main(String[] args) {
-		PApplet.main(new String[] { "--present", "Intro" });
-	}
+	private Random random;
 	
 	public void setup(){
 		SK_WIDTH = 480;
@@ -21,12 +18,17 @@ public class IntroSketch extends PatternFactory{
 		smooth();
 		size(SK_WIDTH, SK_HEIGHT);
 		background(255);
+		random = new Random();
 	}
 	
 	public void draw(){
-		pinsAndLine(80);
+		int granularity = random.nextInt(100);
+		randomCustomShapesWithRandomColors(granularity, random.nextBoolean());
 	}
 	
+	public static void main(String[] args) {
+		PApplet.main(new String[] { "--present", "Intro" });
+	}
 	
 	
 	

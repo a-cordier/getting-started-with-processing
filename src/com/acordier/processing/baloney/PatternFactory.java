@@ -34,8 +34,9 @@ public class PatternFactory extends PApplet {
 		endShape(CLOSE);
 	}
 	
-	protected void randomCustomShapesWithRandomColors(int granularity){
-
+	protected void randomCustomShapesWithRandomColors(int granularity, boolean stroke){
+		if(stroke)strokeWeight(1);
+		else noStroke();
 		beginShape();
 		for(int i = 0; i <= granularity; i++){
 			fill(ColorUtil.randomColorValue(), ColorUtil.randomColorValue(), ColorUtil.randomColorValue());

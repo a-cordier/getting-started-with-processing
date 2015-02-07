@@ -3,6 +3,7 @@ package com.acordier.processing;
 import processing.core.PApplet;
 
 import com.acordier.processing.util.ColorUtil;
+import com.acordier.processing.util.PointUtil;
 
 public class IntroSketch extends PApplet{
 

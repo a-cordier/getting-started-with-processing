@@ -1,4 +1,4 @@
-package com.acordier.processing;
+package com.acordier.processing.util;
 
 import java.util.Random;
 

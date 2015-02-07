@@ -22,6 +22,7 @@ public class IntroSketch extends PatternFactory{
 	}
 	
 	public void draw(){
+		background(255);
 		int granularity = random.nextInt(100);
 		randomCustomShapesWithRandomColors(granularity, random.nextBoolean());
 	}

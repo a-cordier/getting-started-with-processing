@@ -26,11 +26,7 @@ public class IntroSketch extends PatternFactory{
 		int granularity = random.nextInt(100);
 		randomCustomShapesWithRandomColors(granularity, random.nextBoolean());
 	}
-	
-	public static void main(String[] args) {
-		PApplet.main(new String[] { "--present", "Intro" });
-	}
-	
+
 	
 	
 	

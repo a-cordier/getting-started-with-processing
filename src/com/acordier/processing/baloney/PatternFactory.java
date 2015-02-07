@@ -1,7 +1,6 @@
 package com.acordier.processing.baloney;
 
 import com.acordier.processing.util.ColorUtil;
-import com.acordier.processing.util.IntegerUtil;
 import com.acordier.processing.util.PointUtil;
 
 import processing.core.PApplet;

@@ -2,8 +2,6 @@ package com.acordier.processing;
 
 import java.util.Random;
 
-import processing.core.PApplet;
-
 import com.acordier.processing.baloney.PatternFactory;
 
 

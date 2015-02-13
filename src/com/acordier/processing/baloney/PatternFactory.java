@@ -41,6 +41,7 @@ public class PatternFactory extends PApplet {
 		endShape(CLOSE);
 	}
 	
+	
 	protected void randomCustomShapesWithRandomColors(int granularity, boolean stroke){
 		if(stroke)strokeWeight(1);
 		else noStroke();
@@ -61,7 +62,17 @@ public class PatternFactory extends PApplet {
 			}
 		}
 	}
-	
+	float x = SK_WIDTH/2F, y = SK_HEIGHT/2F, angle=PI/6F, scalar=10F;
+	protected  void movingEllipse(int r) {
+		noStroke();
+		x = SK_WIDTH/2F + cos(angle) * scalar;
+		y = SK_WIDTH/2F + sin(angle) * scalar;
+		fill(colorUtil.randomColorInRange(120, 130));
+		ellipse(x, y, 20, 20);
+		scalar += 1;
+		angle += PI/6F;
+		
+	}
 	protected void pinsAndLine(int granularity){
 		float horizontalStep = SK_HEIGHT / granularity*2;
 		float verticalStep = SK_WIDTH / granularity*2;

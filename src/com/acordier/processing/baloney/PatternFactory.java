@@ -53,6 +53,17 @@ public class PatternFactory extends PApplet {
 		endShape(CLOSE);
 	}
 	
+	protected void randomCustomShapesWithRandomColors(int granularity, int alpha, boolean stroke){
+		if(stroke)strokeWeight(1);
+		else noStroke();
+		beginShape();
+		for(int i = 0; i <= granularity; i++){
+			fill(colorUtil.randomColorValue(), colorUtil.randomColorValue(), colorUtil.randomColorValue(), alpha);
+			vertex(random(SK_WIDTH), random(SK_HEIGHT), random(-SK_WIDTH/2F, SK_WIDTH/2F));
+		}	
+		endShape(CLOSE);
+	}
+	
 	protected void circlePatternWithRandomColors(int radius){
 		int diameter = radius * 2;
 		for(int y = 0; y < SK_HEIGHT; y+=diameter){
@@ -62,17 +73,33 @@ public class PatternFactory extends PApplet {
 			}
 		}
 	}
+	
 	float x = SK_WIDTH/2F, y = SK_HEIGHT/2F, angle=PI/6F, scalar=10F;
-	protected  void movingEllipse(int r) {
+	protected  void movingEllipse(int scalar) {
 		noStroke();
-		x = SK_WIDTH/2F + cos(angle) * scalar;
-		y = SK_WIDTH/2F + sin(angle) * scalar;
-		fill(colorUtil.randomColorInRange(120, 130));
+		constrain(scalar, 0, SK_WIDTH);
+		fill(colorUtil.randomColorInRange(120, 130),colorUtil.randomColorInRange(120, 130),colorUtil.randomColorInRange(120, 130));
+		ellipseMode(CENTER);
+		ellipse(SK_WIDTH/2F, SK_WIDTH/2F, 20, 20);
+		x = SK_WIDTH/2F + sin(angle) * scalar;
+		y = SK_WIDTH/2F + cos(angle) * scalar ;
 		ellipse(x, y, 20, 20);
-		scalar += 1;
-		angle += PI/6F;
+		angle+=PI/24;
+	
 		
+		
+//		beginShape();
+//		vertex(SK_WIDTH/2, 0);
+//		vertex(SK_WIDTH, SK_HEIGHT);
+//		vertex(0, SK_HEIGHT/2);
+//		vertex(SK_WIDTH, SK_HEIGHT/2);
+//		vertex(0, SK_HEIGHT);
+//		vertex(SK_WIDTH/2, 0);		
+//		endShape();
+		//scalar += 1;
+		angle += PI/32F;		
 	}
+	
 	protected void pinsAndLine(int granularity){
 		float horizontalStep = SK_HEIGHT / granularity*2;
 		float verticalStep = SK_WIDTH / granularity*2;

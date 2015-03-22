@@ -2,6 +2,7 @@ package com.acordier.processing;
 
 import com.acordier.processing.baloney.PatternFactory;
 import com.acordier.processing.util.RandomX;
+import processing.opengl.*;
 
 
 public class IntroSketch extends PatternFactory{
@@ -16,21 +17,19 @@ public class IntroSketch extends PatternFactory{
 		SK_WIDTH = 480;
 		SK_HEIGHT = 480;
 		smooth();
-		size(SK_WIDTH, SK_HEIGHT);
+		size(SK_WIDTH, SK_HEIGHT, P3D);
 		background(255);
-		frameRate(12);
+		frameRate(32);
 		 
 	}
 	
-	public void draw(){
-		
+	public void draw(){	
 		background(255);
 		//background(getColorUtil().randomColorInRange(120, 180), getColorUtil().randomColorInRange(120, 200), getColorUtil().randomColorInRange(120, 200));
-		int granularity = randomX.nextIntInRange(3, 300);
-		//System.out.println(granularity);
-		//randomCustomShapesWithRandomColors(granularity, false);
-		//pinsAndLine(granularity==0?100:granularity);
-		movingEllipse(20);
+		int granularity = randomX.nextIntInRange(150, 200);
+		//System.out.println(granularity);		
+		randomCustomShapesWithRandomColors(randomX.nextIntInRange(10, 80), 200, false);
+		//movingEllipse(25);
 	}
 
 	

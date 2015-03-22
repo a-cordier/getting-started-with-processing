@@ -1,9 +1,10 @@
 package com.acordier.processing.util;
 
-import java.util.Random;
+import processing.core.PApplet;
 
 public class ColorUtil {
 	
+	private static final long serialVersionUID = 1L;
 	private RandomX randomX;
 	
 	public ColorUtil(){
@@ -23,4 +24,6 @@ public class ColorUtil {
 	public int randomColorInRange(int min, int max){
 		return randomX.nextIntInRange(min, max);
 	}
+	
+
 }

@@ -1,16 +1,12 @@
 package com.acordier.processing;
 
-import com.acordier.processing.util.ColorUtil;
-
 import processing.core.PApplet;
-import processing.core.PFont;
 import processing.core.PImage;
 import processing.core.PShape;
 
 public class PicStuff extends PApplet {
 
 	private static final long serialVersionUID = 1L;
-	private static String FONT = "Ubuntu-Bold-48.vlw";
 
 	PShape bot1;
 	PShape bot2;
